@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { openInquiry } from "@/lib/inquiry";
 import { Gauge, ShieldCheck, Headset, Settings, UserPlus, Gift, Router } from "lucide-react";
 
 /* ── WhatsApp icon ── */
@@ -150,18 +151,19 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 mt-2 mx-auto lg:mx-0 w-full max-w-[460px]">
-              <a
-                href="#new-connection"
-                className="flex flex-1 items-center justify-center gap-2 rounded-md px-5 py-3.5 text-[13px] sm:text-[15px] font-extrabold uppercase tracking-wide text-white shadow-lg transition hover:brightness-110"
+              <button
+                onClick={() => openInquiry("New Connection Inquiry")}
+                className="flex flex-1 items-center justify-center gap-2 rounded-md px-5 py-3.5 text-[13px] sm:text-[15px] font-extrabold uppercase tracking-wide text-white shadow-lg transition hover:brightness-110 cursor-pointer"
                 style={{ background: "linear-gradient(180deg, #f78d1e 0%, #e05b0a 100%)" }}
               >
                 <UserPlus className="w-5 h-5" strokeWidth={2.2} />
                 New Connection
-              </a>
+              </button>
               <a
                 href="https://wa.me/9779804268190"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="WhatsApp Us"
                 className="flex flex-1 items-center justify-center gap-2 rounded-md px-5 py-3.5 text-[13px] sm:text-[15px] font-extrabold uppercase tracking-wide text-white shadow-lg transition hover:brightness-110"
                 style={{ background: "linear-gradient(180deg, #2ecc62 0%, #17a94c 100%)" }}
               >
@@ -184,7 +186,7 @@ export default function HeroSection() {
             {/* Hero artwork */}
             <div className="relative w-full aspect-[4/3] max-w-[600px] drop-shadow-[0_20px_50px_rgba(0,100,255,0.3)]">
               <Image
-                src="/images/hero-artwork.png"
+                src="/images/hero-artwork.webp"
                 alt="Websurfer Fiber Network router and house"
                 fill
                 priority

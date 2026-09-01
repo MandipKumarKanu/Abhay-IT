@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import InquiryModal from "./InquiryModal";
+import { openInquiry } from "@/lib/inquiry";
 import {
   Globe,
   Tv,
@@ -29,7 +29,6 @@ export default function ServicesIptvSection() {
   });
 
   const [submitted, setSubmitted] = useState(false);
-  const [iptvModalOpen, setIptvModalOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -109,7 +108,7 @@ export default function ServicesIptvSection() {
                 </ul>
 
                 <button
-                  onClick={() => setIptvModalOpen(true)}
+                  onClick={() => openInquiry("Skycom IPTV Service (300+ Live Channels)")}
                   className="mt-2 inline-flex items-center gap-2 bg-[#ffaa00] hover:bg-[#e69900] text-[#001233] font-black text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-md transition transform active:scale-95 cursor-pointer"
                 >
                   CHOOSE IPTV PLAN
@@ -127,10 +126,13 @@ export default function ServicesIptvSection() {
               {/* Right Graphic: Smart TV & Set-Top Box */}
               <div className="relative z-10 w-full md:w-72 h-44 sm:h-52 shrink-0 rounded-xl overflow-hidden shadow-2xl border border-blue-500/20 bg-slate-900/60 flex items-center justify-center">
                 <Image
-                  src="/images/iptv-box.png"
+                  src="/images/iptv-box.webp"
                   alt="Skycom IPTV Box and Smart TV"
-                  fill
-                  className="object-cover"
+                  width={300}
+                  height={220}
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 300px"
+                  className="object-cover w-full h-full"
                 />
               </div>
             </div>
@@ -157,7 +159,7 @@ export default function ServicesIptvSection() {
                     <h4 className="font-extrabold text-[12px] sm:text-[13px] text-[#0c2461] leading-snug">
                       100% Fiber Network
                     </h4>
-                    <p className="text-[10px] sm:text-[11px] font-medium text-slate-500 leading-tight">
+                    <p className="text-[10px] sm:text-[11px] font-medium text-slate-600 leading-tight">
                       Pure fiber connection with high speed.
                     </p>
                   </div>
@@ -172,7 +174,7 @@ export default function ServicesIptvSection() {
                     <h4 className="font-extrabold text-[12px] sm:text-[13px] text-[#0c2461] leading-snug">
                       Affordable Plans
                     </h4>
-                    <p className="text-[10px] sm:text-[11px] font-medium text-slate-500 leading-tight">
+                    <p className="text-[10px] sm:text-[11px] font-medium text-slate-600 leading-tight">
                       Best plans at the lowest price.
                     </p>
                   </div>
@@ -187,7 +189,7 @@ export default function ServicesIptvSection() {
                     <h4 className="font-extrabold text-[12px] sm:text-[13px] text-[#0c2461] leading-snug">
                       No Hidden Charges
                     </h4>
-                    <p className="text-[10px] sm:text-[11px] font-medium text-slate-500 leading-tight">
+                    <p className="text-[10px] sm:text-[11px] font-medium text-slate-600 leading-tight">
                       No hidden charges at all.
                     </p>
                   </div>
@@ -202,7 +204,7 @@ export default function ServicesIptvSection() {
                     <h4 className="font-extrabold text-[12px] sm:text-[13px] text-[#0c2461] leading-snug">
                       Trusted Support
                     </h4>
-                    <p className="text-[10px] sm:text-[11px] font-medium text-slate-500 leading-tight">
+                    <p className="text-[10px] sm:text-[11px] font-medium text-slate-600 leading-tight">
                       24/7 customer support always with you.
                     </p>
                   </div>
@@ -301,58 +303,69 @@ export default function ServicesIptvSection() {
                       
                       {/* Name */}
                       <div className="relative">
+                        <label htmlFor="form-name" className="sr-only">Your Name</label>
                         <User className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                         <input
+                          id="form-name"
                           type="text"
                           required
                           placeholder="Your Name *"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full pl-9 pr-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0047bb]/20 focus:border-[#0047bb] text-slate-800 placeholder-slate-400"
+                          className="w-full pl-9 pr-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0047bb]/20 focus:border-[#0047bb] text-slate-800 placeholder-slate-500"
                         />
                       </div>
 
                       {/* Mobile */}
                       <div className="relative">
+                        <label htmlFor="form-mobile" className="sr-only">Mobile Number</label>
                         <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                         <input
+                          id="form-mobile"
                           type="tel"
                           required
                           placeholder="Mobile Number *"
                           value={formData.mobile}
                           onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                          className="w-full pl-9 pr-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0047bb]/20 focus:border-[#0047bb] text-slate-800 placeholder-slate-400"
+                          className="w-full pl-9 pr-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0047bb]/20 focus:border-[#0047bb] text-slate-800 placeholder-slate-500"
                         />
                       </div>
 
                       {/* Email */}
                       <div className="relative">
+                        <label htmlFor="form-email" className="sr-only">Email Address</label>
                         <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                         <input
+                          id="form-email"
                           type="email"
                           placeholder="Email Address"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full pl-9 pr-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0047bb]/20 focus:border-[#0047bb] text-slate-800 placeholder-slate-400"
+                          className="w-full pl-9 pr-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0047bb]/20 focus:border-[#0047bb] text-slate-800 placeholder-slate-500"
                         />
                       </div>
 
                       {/* Address */}
                       <div className="relative">
+                        <label htmlFor="form-address" className="sr-only">Your Address</label>
                         <MapPin className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                         <input
+                          id="form-address"
                           type="text"
                           placeholder="Your Address"
                           value={formData.address}
                           onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                          className="w-full pl-9 pr-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0047bb]/20 focus:border-[#0047bb] text-slate-800 placeholder-slate-400"
+                          className="w-full pl-9 pr-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0047bb]/20 focus:border-[#0047bb] text-slate-800 placeholder-slate-500"
                         />
                       </div>
 
                       {/* Package Select */}
                       <div className="relative">
+                        <label htmlFor="form-package-select" className="sr-only">Select Package</label>
                         <Package className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                         <select
+                          id="form-package-select"
+                          aria-label="Select Package"
                           value={formData.package}
                           onChange={(e) => setFormData({ ...formData, package: e.target.value })}
                           className="w-full pl-9 pr-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0047bb]/20 focus:border-[#0047bb] text-slate-800 appearance-none cursor-pointer"
@@ -392,6 +405,7 @@ export default function ServicesIptvSection() {
         href="https://wa.me/9779804268190"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
         title="Chat on WhatsApp"
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white p-3.5 rounded-full shadow-2xl transition transform hover:scale-110 flex items-center justify-center group"
       >
@@ -399,14 +413,8 @@ export default function ServicesIptvSection() {
           <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.155 4.22 4.266-1.119zm11.233-6.425c-.296-.149-1.754-.868-2.025-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.754-.719 2.001-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.568-.347z" />
         </svg>
       </a>
-
-      {/* IPTV Modal */}
-      <InquiryModal
-        isOpen={iptvModalOpen}
-        onClose={() => setIptvModalOpen(false)}
-        selectedPlan="Skycom IPTV Service (300+ Live Channels)"
-      />
     </section>
   );
 }
+
 

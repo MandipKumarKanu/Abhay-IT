@@ -25,10 +25,12 @@ export default function Footer() {
             {/* AD Logo Icon */}
             <div className="mt-5 w-14 h-14 shrink-0">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Abhay Digital Logo"
                 width={48}
                 height={48}
+                loading="lazy"
+                sizes="48px"
                 className="w-full h-full object-contain drop-shadow-md filter grayscale invert"
               />
             </div>

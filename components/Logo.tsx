@@ -7,10 +7,11 @@ export default function Logo() {
       {/* Logo image replacing SVG icon */}
       <div className="relative w-12 h-12 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center">
         <Image
-          src="/logo.png"
+          src="/logo.webp"
           alt="Abhay Digital Logo"
           width={56}
           height={56}
+          sizes="56px"
           className="w-full h-full object-contain drop-shadow-sm"
           priority
         />

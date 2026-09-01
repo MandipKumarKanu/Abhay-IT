@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import InquiryModal from "./InquiryModal";
+import React from "react";
+import { openInquiry } from "@/lib/inquiry";
 
 /* ── Types ─────────────────────────────────────────────── */
 interface Plan {
@@ -105,14 +105,6 @@ const PLANS: Plan[] = [
 ];
 
 export default function PackagesSection() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState("");
-
-  const handleChoosePlan = (plan: Plan) => {
-    setSelectedPlan(`${plan.speed} ${plan.unit} - ${plan.price} (${plan.type})`);
-    setModalOpen(true);
-  };
-
   return (
     <section id="packages" className="bg-[#f8fafc] py-12 md:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1500px] mx-auto">
@@ -190,7 +182,7 @@ export default function PackagesSection() {
               {/* CTA Button */}
               <div className="px-3.5 pb-4 pt-1">
                 <button
-                  onClick={() => handleChoosePlan(plan)}
+                  onClick={() => openInquiry(`${plan.speed} ${plan.unit} - ${plan.price} (${plan.type})`)}
                   className="w-full py-2.5 px-4 rounded-full text-white text-[13px] font-black uppercase tracking-wider transition-all duration-200 hover:brightness-110 hover:shadow-md active:scale-95 cursor-pointer"
                   style={{ backgroundColor: plan.color }}
                 >
@@ -201,15 +193,9 @@ export default function PackagesSection() {
           ))}
         </div>
       </div>
-
-      {/* Inquiry Dialog Modal */}
-      <InquiryModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        selectedPlan={selectedPlan}
-      />
     </section>
   );
 }
+
 
 

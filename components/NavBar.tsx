@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Logo from "./Logo";
-import InquiryModal from "./InquiryModal";
+import { openInquiry } from "@/lib/inquiry";
 import { Menu, X } from "lucide-react";
 
 const NAV_ITEMS = [
@@ -16,7 +16,6 @@ const NAV_ITEMS = [
 
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <nav className="w-full bg-white shadow-md border-b border-gray-100 relative z-50">
@@ -43,7 +42,7 @@ export default function NavBar() {
         {/* Desktop CTA Button */}
         <div className="hidden lg:flex items-center">
           <button
-            onClick={() => setModalOpen(true)}
+            onClick={() => openInquiry("New Connection Inquiry")}
             className="bg-[#0047ba] hover:bg-[#003899] text-white font-bold text-xs xl:text-sm tracking-wide px-5 py-2.5 rounded-lg shadow-sm hover:shadow transition-all duration-200 cursor-pointer"
           >
             NEW CONNECTION
@@ -86,7 +85,7 @@ export default function NavBar() {
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                setModalOpen(true);
+                openInquiry("New Connection Inquiry");
               }}
               className="block w-full text-center bg-[#0047ba] hover:bg-[#003899] text-white font-bold text-sm tracking-wide py-3 rounded-lg shadow transition-colors cursor-pointer"
             >
@@ -95,14 +94,8 @@ export default function NavBar() {
           </div>
         </div>
       )}
-
-      {/* Inquiry Dialog Modal */}
-      <InquiryModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        selectedPlan="New Connection Inquiry"
-      />
     </nav>
   );
 }
+
 
