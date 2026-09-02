@@ -28,6 +28,7 @@ const organizationSchema = {
     streetAddress: "Birgunj-4",
     addressLocality: "Birgunj",
     addressRegion: "Parsa",
+    postalCode: "44300",
     addressCountry: "NP",
   },
   sameAs: [
@@ -51,6 +52,7 @@ const localBusinessSchema = {
     streetAddress: "Birgunj-4",
     addressLocality: "Birgunj",
     addressRegion: "Parsa",
+    postalCode: "44300",
     addressCountry: "NP",
   },
   geo: {
