@@ -103,7 +103,7 @@ export default function HeroSection() {
             {/* Eyebrow badge */}
             <div className="flex justify-center lg:justify-start">
               <span className="inline-block bg-[#1a55d4] px-4 py-[6px] text-[11px] sm:text-[13px] font-extrabold tracking-widest text-white uppercase rounded-sm shadow">
-                Websurfer Nepal Communication
+               A Reseller Of Websurfer Nepal Communication
               </span>
             </div>
 
