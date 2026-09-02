@@ -116,19 +116,20 @@ export default function HeroSection() {
               {" "}Reliable
             </h2>
 
-            {/* INTERNET */}
+            {/* INTERNET - keyword-rich H1 for SEO, visually styled */}
             <h1
-              className="leading-[0.88] font-black uppercase tracking-[-0.01em] text-transparent"
+              className="leading-[0.88] font-black uppercase tracking-[-0.02em] text-transparent"
               style={{
-                fontSize: "clamp(64px, 11vw, 110px)",
+                fontSize: "clamp(44px, 9vw, 88px)",
                 background: "linear-gradient(180deg, #ffd04b 0%, #f97316 45%, #d9400a 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.5))",
               }}
             >
-              Internet
+              Fiber Internet
             </h1>
+            <p className="sr-only">High-Speed Fiber Internet & IPTV in Birgunj, Parsa, Nepal</p>
 
             {/* For Home & Office pill */}
             <div className="flex justify-center lg:justify-start">
@@ -187,9 +188,10 @@ export default function HeroSection() {
             <div className="relative w-full aspect-[4/3] max-w-[600px] drop-shadow-[0_20px_50px_rgba(0,100,255,0.3)]">
               <Image
                 src="/images/hero-artwork.webp"
-                alt="Websurfer Fiber Network router and house"
+                alt="Websurfer Fiber Network router and house - High-Speed Fiber Internet in Birgunj, Parsa, Nepal"
                 fill
                 priority
+                fetchPriority="high"
                 sizes="(max-width: 1024px) 90vw, 600px"
                 className="object-cover rounded-lg"
               />

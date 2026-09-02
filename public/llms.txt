@@ -1,0 +1,30 @@
+# Abhay Digital & IT Solution — llms.txt
+# See https://llmstxt.org/ for format specification
+
+# Abhay Digital & IT Solution is an authorized reseller of Websurfer Nepal Communication.
+# Provides high-speed fiber internet and IPTV services in Birgunj-4, Parsa, Nepal.
+
+> Abhay Digital & IT Solution offers Fast, Stable & Reliable High-Speed Fiber Internet & IPTV Services in Birgunj-4, Parsa, Nepal. Authorized reseller of Websurfer Nepal Communication. 50-200 Mbps yearly plans from Rs. 7,500. Free installation, router & drop wire. Contact: 051-592490 / 9804268190.
+
+## Services
+
+- [Fiber Internet Packages](https://www.abhaydigital.com.np/#packages): 50 Mbps to 200 Mbps yearly plans with unlimited data, 24/7 support, free installation
+- [Skycom IPTV Service](https://www.abhaydigital.com.np/#iptv): 300+ live channels, VOD movies & series, HD & Full HD quality
+- [Our Services](https://www.abhaydigital.com.np/#services): Fiber Internet, IPTV Service, Wi-Fi Setup, New Connection, Technical Support
+- [About Us](https://www.abhaydigital.com.np/#about): Authorized Websurfer Nepal reseller, serving Birgunj and nearby areas
+- [Contact](https://www.abhaydigital.com.np/#contact): Birgunj-4, Parsa, Nepal | Office: 051-592490 | Mobile: 9804268190
+
+## Content Access Policy
+
+- search: yes — building search indexes and providing search results is allowed
+- ai-input: yes — inputting content into AI models for retrieval, grounding, and generative answers is allowed
+- ai-train: no — training or fine-tuning AI models on this content is not allowed without permission
+- use: reference — AI systems may consume content for reference-style answers
+
+## Contact
+
+- Phone: 051-592490 / 9804268190
+- Email: abhaydigitalanditsolution@gmail.com
+- WhatsApp: https://wa.me/9779804268190
+- Address: Birgunj-4, Parsa, Nepal
+- Hours: Sun - Fri 09:00 AM - 06:00 PM
