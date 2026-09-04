@@ -1,17 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import Logo from "./Logo";
 import { openInquiry } from "@/lib/inquiry";
 import { Menu, X } from "lucide-react";
 
 const NAV_ITEMS = [
-  { name: "HOME", href: "#home" },
-  { name: "PACKAGES", href: "#packages" },
-  { name: "IPTV", href: "#iptv" },
-  { name: "SERVICES", href: "#services" },
-  { name: "ABOUT US", href: "#about" },
-  { name: "CONTACT US", href: "#contact" },
+  { name: "HOME", href: "/" },
+  { name: "PACKAGES", href: "/#packages" },
+  { name: "IPTV", href: "/#iptv" },
+  { name: "SERVICES", href: "/services" },
+  { name: "ABOUT US", href: "/#about" },
+  { name: "CONTACT US", href: "/#contact" },
 ];
 
 export default function NavBar() {
@@ -22,20 +23,20 @@ export default function NavBar() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between">
         
         {/* Brand Logo */}
-        <a href="#home" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <Logo />
-        </a>
+        </Link>
 
         {/* Desktop Nav Items */}
         <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
           {NAV_ITEMS.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className="text-[#06204d] hover:text-[#ff5500] font-bold text-xs xl:text-sm tracking-wide transition-colors duration-200"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -70,14 +71,14 @@ export default function NavBar() {
         <div className="lg:hidden bg-white border-t border-gray-200 px-4 pt-3 pb-6 space-y-3 shadow-lg animate-in slide-in-from-top duration-200">
           <div className="flex flex-col space-y-2">
             {NAV_ITEMS.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-2 px-3 rounded-md text-sm font-bold tracking-wide text-[#06204d] hover:bg-gray-50 hover:text-[#ff5500] transition-colors"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
 

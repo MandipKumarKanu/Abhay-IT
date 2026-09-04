@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronRight, MapPin, Phone, Mail, Clock } from "lucide-react";
@@ -43,31 +45,31 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-xs sm:text-[13px] font-semibold text-slate-300">
               <li>
-                <Link href="#" className="hover:text-white transition flex items-center gap-1">
+                <Link href="/" className="hover:text-white transition flex items-center gap-1">
                   <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="#packages" className="hover:text-white transition flex items-center gap-1">
+                <Link href="/#packages" className="hover:text-white transition flex items-center gap-1">
                   <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                   Packages
                 </Link>
               </li>
               <li>
-                <Link href="#packages" className="hover:text-white transition flex items-center gap-1">
+                <Link href="/#iptv" className="hover:text-white transition flex items-center gap-1">
                   <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                   IPTV
                 </Link>
               </li>
               <li>
-                <Link href="#packages" className="hover:text-white transition flex items-center gap-1">
+                <Link href="/services" className="hover:text-white transition flex items-center gap-1">
                   <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                  Services
+                  Services (CCTV, TV Wall Fitting &amp; Electrical)
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition flex items-center gap-1">
+                <Link href="/#about" className="hover:text-white transition flex items-center gap-1">
                   <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                   About Us
                 </Link>
@@ -213,7 +215,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-semibold text-slate-300">
-          <div>
+          <div suppressHydrationWarning>
             &copy; {new Date().getFullYear()} Abhay Digital &amp; IT Solution. All Rights Reserved.
           </div>
           <div>

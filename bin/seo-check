@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+# seo-check — drift compare for abhaydigital.com.np
+# Usage: ./bin/seo-check [url]
+# Compares live site against .seo-baseline.json
+set -euo pipefail
+URL="${1:-https://www.abhaydigital.com.np/}"
+BASELINE=".seo-baseline.json"
+RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; NC='\033[0m'
+
+fail=0; pass=0
+check() {
+  local label="$1" expected="$2" actual="$3"
+  if [[ "$expected" == "$actual" ]]; then
+    echo -e "${GREEN}✓${NC} $label: $actual"
+    pass=$((pass+1))
+  else
+    echo -e "${RED}✗${NC} $label"
+    echo "  expected: $expected"
+    echo "  actual:   $actual"
+    fail=$((fail+1))
+  fi
+}
+
+echo "=== SEO Drift Check: $URL ==="
+echo "Baseline: $(jq -r .date $BASELINE) (health $(jq -r .health_score $BASELINE) → $(jq -r .expected_after $BASELINE))"
+echo ""
+
+HTML=$(curl -skL "$URL")
+ROBOTS=$(curl -skL "$URL/robots.txt")
+SITEMAP=$(curl -skL "$URL/sitemap.xml")
+
+# on-page
+TITLE=$(echo "$HTML" | grep -o '<title>[^<]*</title>' | sed 's/<[^>]*>//g' | head -1)
+DESC=$(echo "$HTML" | grep -o '<meta name="description" content="[^"]*"' | sed 's/.*content="//;s/"//' | head -1)
+ROBOTS_META=$(echo "$HTML" | grep -o '<meta name="robots" content="[^"]*"' | sed 's/.*content="//;s/"//' | head -1)
+CANON=$(echo "$HTML" | grep -o '<link rel="canonical" href="[^"]*"' | sed 's/.*href="//;s/"//' | head -1)
+H1=$(echo "$HTML" | grep -o '<h1[^>]*>[^<]*</h1>' | sed 's/<[^>]*>//g' | head -1 | xargs)
+OG=$(echo "$HTML" | grep -o 'property="og:' | wc -l | xargs)
+SCHEMA=$(echo "$HTML" | grep -o '"@type":"[^"]*"' | sort -u | wc -l | xargs)
+
+check "title" "$(jq -r .on_page.title $BASELINE)" "$TITLE"
+check "description length" "$(jq -r .on_page.desc_len $BASELINE)" "${#DESC}"
+check "robots meta" "$(jq -r .on_page.robots $BASELINE)" "$ROBOTS_META"
+check "canonical" "$(jq -r .on_page.canonical $BASELINE)" "$CANON"
+check "H1" "$(jq -r .on_page.h1 $BASELINE)" "$H1"
+check "OG tags count" "$(jq -r .on_page.og_tags $BASELINE)" "$OG"
+check "schema types count" "$(jq -r '.schema|length' $BASELINE)" "$SCHEMA"
+
+# files reachable
+for path in robots.txt sitemap.xml llms.txt; do
+  code=$(curl -sk -o /dev/null -w "%{http_code}" "$URL/$path")
+  if [[ "$code" == "200" ]]; then
+    echo -e "${GREEN}✓${NC} $path: $code"
+    pass=$((pass+1))
+  else
+    echo -e "${RED}✗${NC} $path: $code (expected 200)"
+    fail=$((fail+1))
+  fi
+done
+
+# security headers (live)
+for h in "x-content-type-options" "x-frame-options" "referrer-policy" "permissions-policy"; do
+  val=$(curl -skI "$URL" | grep -i "^$h:" | cut -d: -f2- | xargs || true)
+  if [[ -n "$val" ]]; then
+    echo -e "${GREEN}✓${NC} header $h: $val"
+    pass=$((pass+1))
+  else
+    echo -e "${YELLOW}⚠${NC} header $h: missing (check next.config.ts headers)"
+  fi
+done
+
+echo ""
+echo "---"
+echo -e "Result: ${GREEN}$pass passed${NC}, ${RED}$fail failed${NC}"
+if [[ $fail -gt 0 ]]; then
+  echo -e "${RED}Drift detected — review failures above${NC}"
+  exit 1
+else
+  echo -e "${GREEN}No drift — site matches baseline${NC}"
+  exit 0
+fi

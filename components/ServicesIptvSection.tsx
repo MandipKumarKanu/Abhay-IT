@@ -221,12 +221,19 @@ export default function ServicesIptvSection() {
             {/* OUR SERVICES Card */}
             <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-sm">
               {/* Header */}
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="h-[2px] w-6 bg-[#f95400] rounded-full" />
-                <h3 className="text-base sm:text-lg font-black text-[#0c2461] uppercase tracking-tight">
-                  OUR SERVICES
-                </h3>
-                <span className="h-[2px] w-6 bg-[#f95400] rounded-full" />
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <span className="h-[2px] w-4 bg-[#f95400] rounded-full" />
+                  <h3 className="text-base font-black text-[#0c2461] uppercase tracking-tight">
+                    OUR SERVICES
+                  </h3>
+                </div>
+                <a
+                  href="/services"
+                  className="text-[11px] font-black text-[#0047bb] hover:text-[#f95400] uppercase tracking-wide underline transition"
+                >
+                  View All &rarr;
+                </a>
               </div>
 
               {/* 5 Icons Row */}

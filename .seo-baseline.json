@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-02",
+  "url": "https://www.abhaydigital.com.np/",
+  "health_score": 38,
+  "expected_after": 85,
+  "on_page": {
+    "title": "Fiber Internet & IPTV in Birgunj, Parsa | Abhay Digital",
+    "title_len": 59,
+    "description": "Fast, Stable & Reliable Fiber Internet & IPTV Services in Birgunj-4, Parsa, Nepal. 50-200 Mbps plans starting from Rs. 7,500/year. Free installation, router & drop wire.",
+    "desc_len": 181,
+    "robots": "index, follow",
+    "canonical": "https://www.abhaydigital.com.np",
+    "h1": "Fiber Internet",
+    "og_tags": 10,
+    "twitter_tags": 5,
+    "geo": ["NP-P2", "Birgunj", "27.0074;84.8788"]
+  },
+  "schema": [
+    "AggregateRating",
+    "BreadcrumbList",
+    "ContactPoint",
+    "GeoCoordinates",
+    "ListItem",
+    "LocalBusiness",
+    "Offer",
+    "OfferCatalog",
+    "OpeningHoursSpecification",
+    "Organization",
+    "Person",
+    "PostalAddress",
+    "Rating",
+    "Review",
+    "Service",
+    "WebSite"
+  ],
+  "sitemap": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://www.abhaydigital.com.np/</loc>\n<lastmod>2026-09-02T11:54:42.872Z</lastmod>\n<changefreq>weekly</changefreq>\n<priority>1</priority>\n</url>\n</urlset>",
+  "robots_txt": "User-Agent: *\nAllow: /\nDisallow: /api/\nDisallow: /admin/\n\nUser-Agent: GPTBot\nAllow: /\n\nUser-Agent: ClaudeBot\nAllow: /\n\nUser-Agent: Google-Extended\nAllow: /\n\nUser-Agent: CCBot\nAllow: /\n\nUser-Agent: Bytespider\nAllow: /\n\nUser-Agent: Applebot-Extended\nDisallow: /\n\nUser-Agent: Amazonbot\nDisallow: /\n\nUser-Agent: CloudflareBrowserRenderingCrawler\nDisallow: /\n\nSitemap: https://www.abhaydigital.com.np/sitemap.xml",
+  "headers": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+  },
+  "files": [
+    "app/layout.tsx",
+    "app/robots.ts",
+    "app/sitemap.ts",
+    "app/page.tsx",
+    "components/HeroSection.tsx",
+    "components/TestimonialsSection.tsx",
+    "public/llms.txt",
+    "next.config.ts"
+  ]
+}

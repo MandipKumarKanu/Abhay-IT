@@ -16,7 +16,11 @@ export const ALL_PACKAGES = [
   "200 Mbps - Rs. 10,500/yr (Only Internet)",
   "200 Mbps - Rs. 18,500/2yr (Internet + IPTV)",
   "Skycom IPTV Service (300+ Live Channels)",
-  "Custom Fiber Connection Inquiry",
+  "Complete CCTV Camera Setup & Installation",
+  "CCTV Repair, Maintenance & Storage Setup",
+  "Professional TV Wall Fitting & Cable Setup",
+  "Electricity Wiring Service (Home/Office/Building)",
+  "Custom Fiber Connection & IT Support",
 ];
 
 export default function InquiryModal({
