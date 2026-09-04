@@ -37,11 +37,11 @@ export default function ServicesPageContent() {
     <div className="bg-slate-50 text-slate-800 py-10 px-4 sm:px-6 lg:px-8 space-y-16">
       
       {/* PAGE HERO HEADER */}
-      <section className="max-w-7xl mx-auto text-center space-y-4 pt-4">
-        <div className="inline-flex items-center gap-2 bg-blue-100 text-[#0047ba] px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider">
+      <section className="max-w-[1500px] mx-auto text-center space-y-4 pt-4">
+        {/* <div className="inline-flex items-center gap-2 bg-blue-100 text-[#0047ba] px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider">
           <Sparkles className="w-4 h-4 text-[#ff5500]" />
           Abhay Digital &amp; IT Solutions
-        </div>
+        </div> */}
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#03183d] tracking-tight uppercase">
           Our Professional <span className="text-[#ff5500]">Services</span>
         </h1>
@@ -74,7 +74,7 @@ export default function ServicesPageContent() {
       {/* ==========================================
           SECTION 1: COMPLETE CCTV SOLUTIONS FLYER
          ========================================== */}
-      <section id="cctv" className="max-w-7xl mx-auto bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xl">
+      <section id="cctv" className="max-w-[1500px] mx-auto bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xl">
         
         {/* Banner Top Header */}
         <div className="bg-gradient-to-r from-[#03183d] via-[#052b66] to-[#0047ba] text-white p-6 sm:p-10 relative overflow-hidden">
@@ -290,7 +290,7 @@ export default function ServicesPageContent() {
       {/* ========================================================
           SECTION 2: PROFESSIONAL TV WALL FITTING & SETUP FLYER
          ======================================================== */}
-      <section id="tv-fitting" className="max-w-7xl mx-auto bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xl">
+      <section id="tv-fitting" className="max-w-[1500px] mx-auto bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xl">
         
         {/* Banner Top Header */}
         <div className="bg-gradient-to-r from-[#003899] via-[#0047ba] to-[#0c2461] text-white p-6 sm:p-10 relative overflow-hidden">
@@ -459,7 +459,7 @@ export default function ServicesPageContent() {
       {/* ========================================================
           SECTION 3: ELECTRICITY WIRING SERVICES FLYER
          ======================================================== */}
-      <section id="electrical-wiring" className="max-w-7xl mx-auto bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xl">
+      <section id="electrical-wiring" className="max-w-[1500px] mx-auto bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xl">
         
         {/* Banner Top Header */}
         <div className="bg-gradient-to-r from-[#03183d] via-[#052352] to-[#ff5500] text-white p-6 sm:p-10 relative overflow-hidden">
@@ -628,7 +628,7 @@ export default function ServicesPageContent() {
       {/* ========================================================
           SECTION 4: CONTACT & LOCATION FOOTER BAR
          ======================================================== */}
-      <section className="max-w-7xl mx-auto bg-[#03183d] text-white p-8 rounded-3xl border border-blue-900 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="max-w-[1500px] mx-auto bg-[#03183d] text-white p-8 rounded-3xl border border-blue-900 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="space-y-2 text-center md:text-left">
           <h3 className="text-2xl font-black uppercase text-white tracking-tight">
             Need Custom Technical Support or Quick Installation?
