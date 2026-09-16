@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Fiber Internet & IPTV in Birgunj, Parsa | Abhay Digital",
+    default: "Abhay Digital & IT Solution",
     template: "%s | Abhay Digital & IT Solution",
   },
   description:
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Fiber Internet & IPTV in Birgunj, Parsa | Abhay Digital",
+    title: "Abhay Digital & IT Solution",
     description:
       "Fast, Stable & Reliable Fiber Internet & IPTV Services in Birgunj-4, Parsa, Nepal.",
     url: "https://www.abhaydigital.com.np/",
@@ -53,15 +53,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fiber Internet & IPTV in Birgunj, Parsa | Abhay Digital",
+    title: "Abhay Digital & IT Solution",
     description:
       "Fast, Stable & Reliable Fiber Internet & IPTV Services in Birgunj-4, Parsa, Nepal.",
     images: ["/hero-artwork.webp"],
     creator: "@abhaydigital",
   },
-  verification: {
-    google: "", // ← paste GSC HTML tag content here after verifying at https://search.google.com/search-console
-  },
+
   icons: {
     icon: [
       { url: "/logo.png", type: "image/png" },

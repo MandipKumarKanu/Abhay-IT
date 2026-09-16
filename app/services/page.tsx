@@ -5,7 +5,7 @@ import InquiryModal from "@/components/InquiryModal";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CCTV, TV Fitting & Electrical Services | Abhay Digital & IT Solution Birgunj",
+  title: "CCTV, TV Fitting & Electrical Services in Birgunj",
   description:
     "Explore complete CCTV installation, TV wall fitting & setup, and professional electrical wiring services for home, office & building in Birgunj-4, Parsa, Nepal.",
   keywords: [
