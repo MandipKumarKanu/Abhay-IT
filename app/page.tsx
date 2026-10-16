@@ -238,7 +238,7 @@ export default function Home() {
       <HeroSection />
 
       {/* Internet Packages Section matching attached package design */}
-      <PackagesSection />
+      {/* <PackagesSection /> */}
 
       {/* IPTV, Services, Why Choose Us & Inquiry Form Section */}
       <ServicesIptvSection />
