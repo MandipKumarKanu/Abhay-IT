@@ -20,7 +20,7 @@ export default function Footer() {
                 ABOUT US
               </h3>
               <p className="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-medium">
-                Abhay Digital &amp; IT Solution is an authorized reseller of Websurfer Nepal Communication. We are committed to providing high speed, reliable &amp; affordable internet service in Birgunj and nearby areas.
+                Abhay Digital &amp; IT Solution is your trusted technology and installation service provider in Birgunj. We specialize in CCTV security setup, professional TV wall mounting, building electrical wiring, Skycom IPTV, and complete IT support.
               </p>
             </div>
 
@@ -51,9 +51,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#packages" className="hover:text-white transition flex items-center gap-1">
+                <Link href="/services" className="hover:text-white transition flex items-center gap-1">
                   <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                  Packages
+                  Services
                 </Link>
               </li>
               <li>
@@ -83,40 +83,40 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: OUR PACKAGES */}
+          {/* Column 3: OUR SERVICES */}
           <div className="lg:px-4 lg:border-r lg:border-blue-900/50">
             <h3 className="text-sm font-black uppercase text-white tracking-wider mb-4">
-              OUR PACKAGES
+              OUR SERVICES
             </h3>
             <ul className="space-y-2 text-xs sm:text-[13px] font-semibold text-slate-300">
               <li>
-                <Link href="#packages" className="hover:text-white transition flex items-center gap-1">
+                <Link href="/services#cctv" className="hover:text-white transition flex items-center gap-1">
                   <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                  50 Mbps Only Internet
+                  CCTV Installation
                 </Link>
               </li>
               <li>
-                <Link href="#packages" className="hover:text-white transition flex items-center gap-1">
+                <Link href="/services#tv-fitting" className="hover:text-white transition flex items-center gap-1">
                   <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                  100 Mbps Only Internet
+                  TV Wall Fitting &amp; Setup
                 </Link>
               </li>
               <li>
-                <Link href="#packages" className="hover:text-white transition flex items-center gap-1">
+                <Link href="/services#electrical" className="hover:text-white transition flex items-center gap-1">
                   <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                  100 Mbps Internet + IPTV
+                  Electrical Wiring Services
                 </Link>
               </li>
               <li>
-                <Link href="#packages" className="hover:text-white transition flex items-center gap-1">
+                <Link href="/#iptv" className="hover:text-white transition flex items-center gap-1">
                   <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                  200 Mbps Only Internet
+                  Skycom IPTV (300+ Channels)
                 </Link>
               </li>
               <li>
-                <Link href="#packages" className="hover:text-white transition flex items-center gap-1">
+                <Link href="/services" className="hover:text-white transition flex items-center gap-1">
                   <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                  200 Mbps Internet + IPTV
+                  IT Solutions &amp; Support
                 </Link>
               </li>
             </ul>
@@ -219,7 +219,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Abhay Digital &amp; IT Solution. All Rights Reserved.
           </div>
           <div>
-            Reseller Of Websurfer
+            CCTV, TV Fitting, Electrical &amp; IPTV Solutions
           </div>
         </div>
 

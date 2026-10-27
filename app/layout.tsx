@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Abhay Digital & IT Solution",
   },
   description:
-    "Fast, Stable & Reliable Fiber Internet & IPTV Services in Birgunj-4, Parsa, Nepal. 50-200 Mbps plans starting from Rs. 7,500/year. Free installation, router & drop wire.",
+    "Professional CCTV Installation, TV Wall Mounting, Electrical Wiring, Skycom IPTV & IT Solutions in Birgunj-4, Parsa, Nepal. Certified technicians, transparent pricing & reliable support.",
   metadataBase: new URL("https://www.abhaydigital.com.np/"),
   alternates: {
     canonical: "https://www.abhaydigital.com.np/",
@@ -37,17 +37,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Abhay Digital & IT Solution",
     description:
-      "Fast, Stable & Reliable Fiber Internet & IPTV Services in Birgunj-4, Parsa, Nepal.",
+      "Professional CCTV Installation, TV Wall Mounting, Electrical Wiring, Skycom IPTV & IT Solutions in Birgunj-4, Parsa, Nepal.",
     url: "https://www.abhaydigital.com.np/",
     siteName: "Abhay Digital & IT Solution",
     type: "website",
     locale: "en_NP",
     images: [
       {
-        url: "/hero-artwork.webp",
+        url: "/images/cctv-solutions.jpg",
         width: 1200,
         height: 630,
-        alt: "Abhay Digital Fiber Internet & IPTV Services",
+        alt: "Abhay Digital & IT Solution - CCTV, TV Fitting, Electrical & IPTV Services",
       },
     ],
   },
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Abhay Digital & IT Solution",
     description:
-      "Fast, Stable & Reliable Fiber Internet & IPTV Services in Birgunj-4, Parsa, Nepal.",
-    images: ["/hero-artwork.webp"],
+      "Professional CCTV Installation, TV Wall Mounting, Electrical Wiring, Skycom IPTV & IT Solutions in Birgunj-4, Parsa, Nepal.",
+    images: ["/images/cctv-solutions.jpg"],
     creator: "@abhaydigital",
   },
 

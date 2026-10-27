@@ -25,9 +25,6 @@ export default function Logo() {
         <span className="font-bold text-[#002b66] text-sm md:text-base tracking-wider mt-0.5 font-sans">
           &amp; IT SOLUTION
         </span>
-        {/* <span className="font-bold text-[#ff4500] text-xs md:text-[13px] tracking-tight mt-1 font-sans">
-          Reseller Of Websurfer
-        </span> */}
       </div>
     </div>
   );

@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { openInquiry } from "@/lib/inquiry";
 import {
-  Globe,
+  Camera,
   Tv,
-  Wifi,
-  UserPlus,
+  Zap,
+  Wrench,
   Headphones,
   User,
   Phone,
@@ -16,7 +16,7 @@ import {
   Package,
   ShieldCheck,
   Check,
-  Radio,
+  Award,
 } from "lucide-react";
 
 export default function ServicesIptvSection() {
@@ -34,7 +34,7 @@ export default function ServicesIptvSection() {
     e.preventDefault();
     if (!formData.name || !formData.mobile) return;
 
-    const message = `Hello Abhay Digital & IT Solution!\nI want to inquire about a new connection:\n\n👤 *Name:* ${formData.name}\n📞 *Mobile:* ${formData.mobile}\n📧 *Email:* ${formData.email || "N/A"}\n📍 *Address:* ${formData.address || "Birgunj"}\n📦 *Selected Plan:* ${formData.package || "General New Connection"}\n\nPlease contact me to proceed. Thank you!`;
+    const message = `Hello Abhay Digital & IT Solution!\nI want to inquire about a service:\n\n👤 *Name:* ${formData.name}\n📞 *Mobile:* ${formData.mobile}\n📧 *Email:* ${formData.email || "N/A"}\n📍 *Address:* ${formData.address || "Birgunj"}\n📦 *Selected Service:* ${formData.package || "General Service Inquiry"}\n\nPlease contact me to proceed. Thank you!`;
 
     const encoded = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/9779804268190?text=${encoded}`;
@@ -153,14 +153,14 @@ export default function ServicesIptvSection() {
                 {/* Feature 1 */}
                 <div className="flex items-center gap-3 p-2.5 rounded-xl border border-slate-100 bg-slate-50/60">
                   <div className="w-10 h-10 rounded-full border-2 border-[#0047bb] text-[#0047bb] flex items-center justify-center shrink-0">
-                    <Radio className="w-5 h-5" />
+                    <Award className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-extrabold text-[12px] sm:text-[13px] text-[#0c2461] leading-snug">
-                      100% Fiber Network
+                      Certified Experts
                     </h4>
                     <p className="text-[10px] sm:text-[11px] font-medium text-slate-600 leading-tight">
-                      Pure fiber connection with high speed.
+                      Skilled technicians for every job.
                     </p>
                   </div>
                 </div>
@@ -241,10 +241,10 @@ export default function ServicesIptvSection() {
                 
                 <div className="flex flex-col items-center">
                   <div className="w-10 h-10 rounded-full bg-blue-50 text-[#0047bb] flex items-center justify-center mb-1 border border-blue-100 shadow-xs">
-                    <Globe className="w-5 h-5" />
+                    <Camera className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-extrabold text-[#0c2461] leading-tight">
-                    Fiber Internet
+                    CCTV Solutions
                   </span>
                 </div>
 
@@ -259,19 +259,19 @@ export default function ServicesIptvSection() {
 
                 <div className="flex flex-col items-center">
                   <div className="w-10 h-10 rounded-full bg-blue-50 text-[#0047bb] flex items-center justify-center mb-1 border border-blue-100 shadow-xs">
-                    <Wifi className="w-5 h-5" />
+                    <Wrench className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-extrabold text-[#0c2461] leading-tight">
-                    Wi-Fi Setup
+                    TV Wall Fitting
                   </span>
                 </div>
 
                 <div className="flex flex-col items-center">
                   <div className="w-10 h-10 rounded-full bg-blue-50 text-[#0047bb] flex items-center justify-center mb-1 border border-blue-100 shadow-xs">
-                    <UserPlus className="w-5 h-5" />
+                    <Zap className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-extrabold text-[#0c2461] leading-tight">
-                    New Connection
+                    Electrical Wiring
                   </span>
                 </div>
 
@@ -287,12 +287,12 @@ export default function ServicesIptvSection() {
               </div>
             </div>
 
-            {/* GET NEW CONNECTION Form Card */}
-            <div id="new-connection" className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between flex-1">
+            {/* REQUEST A SERVICE Form Card */}
+            <div id="request-service" className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between flex-1">
               
               {/* Header Banner */}
               <div className="bg-[#f95400] text-white text-center py-2.5 px-4 font-black text-sm uppercase tracking-wider">
-                GET NEW CONNECTION
+                REQUEST A SERVICE
               </div>
 
               {/* Form */}
@@ -366,24 +366,24 @@ export default function ServicesIptvSection() {
                         />
                       </div>
 
-                      {/* Package Select */}
+                      {/* Service Select */}
                       <div className="relative">
-                        <label htmlFor="form-package-select" className="sr-only">Select Package</label>
+                        <label htmlFor="form-package-select" className="sr-only">Select Service</label>
                         <Package className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                         <select
                           id="form-package-select"
-                          aria-label="Select Package"
+                          aria-label="Select Service"
                           value={formData.package}
                           onChange={(e) => setFormData({ ...formData, package: e.target.value })}
                           className="w-full pl-9 pr-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0047bb]/20 focus:border-[#0047bb] text-slate-800 appearance-none cursor-pointer"
                         >
-                          <option value="">Select Package</option>
-                          <option value="50 Mbps - Rs. 7,500/yr (Only Internet)">50 Mbps - Rs. 7,500/yr (Only Net)</option>
-                          <option value="100 Mbps - Rs. 8,500/yr (Only Internet)">100 Mbps - Rs. 8,500/yr (Only Net)</option>
-                          <option value="100 Mbps - Rs. 10,500/yr (Internet + IPTV)">100 Mbps - Rs. 10,500/yr (Net + IPTV)</option>
-                          <option value="200 Mbps - Rs. 10,500/yr (Only Internet)">200 Mbps - Rs. 10,500/yr (Only Net)</option>
-                          <option value="200 Mbps - Rs. 18,500/2yr (Internet + IPTV)">200 Mbps - Rs. 18,500/2yr (Net + IPTV)</option>
-                          <option value="Skycom IPTV Service (300+ Channels)">Skycom IPTV Service</option>
+                          <option value="">Select Service</option>
+                          <option value="Complete CCTV Camera Setup & Installation">Complete CCTV Camera Setup</option>
+                          <option value="CCTV Repair, Maintenance & Storage Setup">CCTV Repair & Maintenance</option>
+                          <option value="Professional TV Wall Fitting & Cable Setup">Professional TV Wall Fitting</option>
+                          <option value="Electricity Wiring Service (Home/Office/Building)">Electricity Wiring Service</option>
+                          <option value="Skycom IPTV Service (300+ Channels)">Skycom IPTV Service (300+ Channels)</option>
+                          <option value="General IT & Technical Support">General IT & Technical Support</option>
                         </select>
                       </div>
 

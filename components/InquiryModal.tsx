@@ -10,17 +10,12 @@ interface InquiryModalProps {
 }
 
 export const ALL_PACKAGES = [
-  "50 Mbps - Rs. 7,500/yr (Only Internet)",
-  "100 Mbps - Rs. 8,500/yr (Only Internet)",
-  "100 Mbps - Rs. 10,500/yr (Internet + IPTV)",
-  "200 Mbps - Rs. 10,500/yr (Only Internet)",
-  "200 Mbps - Rs. 18,500/2yr (Internet + IPTV)",
-  "Skycom IPTV Service (300+ Live Channels)",
   "Complete CCTV Camera Setup & Installation",
   "CCTV Repair, Maintenance & Storage Setup",
   "Professional TV Wall Fitting & Cable Setup",
   "Electricity Wiring Service (Home/Office/Building)",
-  "Custom Fiber Connection & IT Support",
+  "Skycom IPTV Service (300+ Live Channels)",
+  "General IT & Technical Support",
 ];
 
 export default function InquiryModal({
@@ -78,15 +73,15 @@ export default function InquiryModal({
 
     const message = `Hello Abhay Digital & IT Solution!
 
-I would like to submit an inquiry for a new connection:
+I would like to submit an inquiry for a service:
 
 👤 *Name:* ${name}
 📞 *Mobile:* ${mobile}
 📧 *Email:* ${email || "N/A"}
 📍 *Address:* ${address || "Birgunj"}
-📦 *Selected Plan:* ${packageChoice}
+📦 *Selected Service:* ${packageChoice}
 
-Please contact me to proceed with installation. Thank you!`;
+Please contact me to proceed. Thank you!`;
 
     const encoded = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/9779804268190?text=${encoded}`;
@@ -123,7 +118,7 @@ Please contact me to proceed with installation. Thank you!`;
           </button>
 
           <h3 id="modal-title" className="text-xl font-black uppercase tracking-tight text-white">
-            GET NEW CONNECTION
+            BOOK A SERVICE
           </h3>
           <p className="text-slate-200 text-xs font-medium mt-1">
             Fill details below to send instant inquiry via WhatsApp
@@ -218,13 +213,13 @@ Please contact me to proceed with installation. Thank you!`;
           {/* Package Selection */}
           <div>
             <label htmlFor="modal-package-select" className="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-1">
-              Select Package / Plan
+              Select Service
             </label>
             <div className="relative">
               <Package className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
               <select
                 id="modal-package-select"
-                aria-label="Select Package / Plan"
+                aria-label="Select Service"
                 value={packageChoice}
                 onChange={(e) => setPackageChoice(e.target.value)}
                 className="w-full pl-9 pr-3 py-2.5 text-xs sm:text-sm font-semibold rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0047bb]/20 focus:border-[#0047bb] text-slate-800 appearance-none cursor-pointer"

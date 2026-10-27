@@ -8,9 +8,8 @@ import { Menu, X } from "lucide-react";
 
 const NAV_ITEMS = [
   { name: "HOME", href: "/" },
-  { name: "PACKAGES", href: "/#packages" },
-  { name: "IPTV", href: "/#iptv" },
   { name: "SERVICES", href: "/services" },
+  { name: "IPTV", href: "/#iptv" },
   { name: "ABOUT US", href: "/#about" },
   { name: "CONTACT US", href: "/#contact" },
 ];
@@ -43,10 +42,10 @@ export default function NavBar() {
         {/* Desktop CTA Button */}
         <div className="hidden lg:flex items-center">
           <button
-            onClick={() => openInquiry("New Connection Inquiry")}
+            onClick={() => openInquiry("Service Inquiry")}
             className="bg-[#0047ba] hover:bg-[#003899] text-white font-bold text-xs xl:text-sm tracking-wide px-5 py-2.5 rounded-lg shadow-sm hover:shadow transition-all duration-200 cursor-pointer"
           >
-            NEW CONNECTION
+            BOOK SERVICE
           </button>
         </div>
 
@@ -86,11 +85,11 @@ export default function NavBar() {
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                openInquiry("New Connection Inquiry");
+                openInquiry("Service Inquiry");
               }}
               className="block w-full text-center bg-[#0047ba] hover:bg-[#003899] text-white font-bold text-sm tracking-wide py-3 rounded-lg shadow transition-colors cursor-pointer"
             >
-              NEW CONNECTION
+              BOOK SERVICE
             </button>
           </div>
         </div>

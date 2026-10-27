@@ -1,17 +1,19 @@
 # Abhay Digital & IT Solution — llms.txt
 # See https://llmstxt.org/ for format specification
 
-# Abhay Digital & IT Solution is an authorized reseller of Websurfer Nepal Communication.
-# Provides high-speed fiber internet and IPTV services in Birgunj-4, Parsa, Nepal.
+# Abhay Digital & IT Solution is a trusted technology and installation service provider in Birgunj-4, Parsa, Nepal.
+# Specializes in CCTV camera installation, TV wall mounting, building electrical wiring, Skycom IPTV, and IT technical support.
 
-> Abhay Digital & IT Solution offers Fast, Stable & Reliable High-Speed Fiber Internet & IPTV Services in Birgunj-4, Parsa, Nepal. Authorized reseller of Websurfer Nepal Communication. 50-200 Mbps yearly plans from Rs. 7,500. Free installation, router & drop wire. Contact: 051-592490 / 9804268190.
+> Abhay Digital & IT Solution provides Complete CCTV Solutions, Professional TV Wall Fitting, Electrical Wiring, Skycom IPTV & IT Services in Birgunj-4, Parsa, Nepal. Certified technicians, transparent rates, and fast on-site support. Contact: 051-592490 / 9804268190.
 
 ## Services
 
-- [Fiber Internet Packages](https://www.abhaydigital.com.np/#packages): 50 Mbps to 200 Mbps yearly plans with unlimited data, 24/7 support, free installation
+- [CCTV Solutions](https://www.abhaydigital.com.np/services#cctv): Complete CCTV setup, HD & night-vision recording, mobile view configuration, repair & maintenance
+- [TV Wall Fitting](https://www.abhaydigital.com.np/services#tv-fitting): Professional TV wall mounting, flush mount bracket, clean concealed cable management
+- [Electrical Wiring](https://www.abhaydigital.com.np/services#electrical): Certified electrical wiring for homes, offices, and commercial buildings
 - [Skycom IPTV Service](https://www.abhaydigital.com.np/#iptv): 300+ live channels, VOD movies & series, HD & Full HD quality
-- [Our Services](https://www.abhaydigital.com.np/#services): Fiber Internet, IPTV Service, Wi-Fi Setup, New Connection, Technical Support
-- [About Us](https://www.abhaydigital.com.np/#about): Authorized Websurfer Nepal reseller, serving Birgunj and nearby areas
+- [Technical Support](https://www.abhaydigital.com.np/services): On-call technician visits, troubleshooting & IT assistance
+- [About Us](https://www.abhaydigital.com.np/#about): Serving Birgunj and nearby areas with quality technical services
 - [Contact](https://www.abhaydigital.com.np/#contact): Birgunj-4, Parsa, Nepal | Office: 051-592490 | Mobile: 9804268190
 
 ## Content Access Policy

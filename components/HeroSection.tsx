@@ -2,8 +2,21 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { openInquiry } from "@/lib/inquiry";
-import { Gauge, ShieldCheck, Headset, Settings, UserPlus, Gift, Router } from "lucide-react";
+import {
+  Camera,
+  Tv,
+  Zap,
+  Headset,
+  ShieldCheck,
+  Award,
+  Sparkles,
+  ArrowRight,
+  CheckCircle2,
+  Wrench,
+  MonitorPlay,
+} from "lucide-react";
 
 /* ── WhatsApp icon ── */
 function WhatsAppIcon({ className = "" }: { className?: string }) {
@@ -14,37 +27,38 @@ function WhatsAppIcon({ className = "" }: { className?: string }) {
   );
 }
 
-/* ── Drop Wire icon ── */
-function DropWireIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className={className} aria-hidden="true">
-      <circle cx="11" cy="13" r="7.5" />
-      <circle cx="11" cy="13" r="4" />
-      <path d="M18 8.4C18.8 6 19.9 4.2 21.5 3.2" />
-    </svg>
-  );
-}
-
-/* ── Starburst badge ── */
-function StarBurst({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 100 100" className={className} aria-hidden="true">
-      <path fill="#facc15" d="M50 2 58 26 78 10 71 34 96 30 78 46 100 58 74 60 86 82 62 74 62 98 50 78 38 98 38 74 14 82 26 60 0 58 22 46 4 30 29 34 22 10 42 26Z" />
-    </svg>
-  );
-}
-
 const FEATURES = [
-  { Icon: Gauge,     label1: "High Speed",  label2: "Internet" },
-  { Icon: ShieldCheck, label1: "Reliable",  label2: "Connection" },
-  { Icon: Headset,   label1: "24/7",        label2: "Support" },
-  { Icon: Settings,  label1: "Easy",        label2: "Installation" },
+  { Icon: Camera,    label1: "HD CCTV",     label2: "Security" },
+  { Icon: Tv,        label1: "TV Wall",     label2: "Mounting" },
+  { Icon: Zap,       label1: "Electrical",  label2: "Wiring" },
+  { Icon: Headset,   label1: "24/7 Expert", label2: "Support" },
 ];
 
-const PERKS = [
-  { Icon: Gift,         label1: "FREE", label2: "INSTALLATION" },
-  { Icon: Router,       label1: "FREE", label2: "ROUTER" },
-  { Icon: DropWireIcon, label1: "FREE", label2: "DROP WIRE" },
+const SERVICE_HIGHLIGHTS = [
+  {
+    Icon: Camera,
+    title: "CCTV Solutions",
+    tagline: "HD & Night Vision Setup",
+    href: "/services#cctv",
+  },
+  {
+    Icon: Tv,
+    title: "TV Wall Fitting",
+    tagline: "Clean Cable Concealment",
+    href: "/services#tv-fitting",
+  },
+  {
+    Icon: Zap,
+    title: "Electrical Wiring",
+    tagline: "Safe Home & Building Setup",
+    href: "/services#electrical",
+  },
+  {
+    Icon: MonitorPlay,
+    title: "Skycom IPTV",
+    tagline: "300+ Live Channels & HD VOD",
+    href: "/#iptv",
+  },
 ];
 
 export default function HeroSection() {
@@ -60,13 +74,12 @@ export default function HeroSection() {
 
         {/* electric blue diagonal speed-lines — bottom-right fan */}
         <svg
-          className="absolute inset-0 h-full w-full opacity-70"
+          className="absolute inset-0 h-full w-full opacity-60"
           viewBox="0 0 1200 520"
           fill="none"
           preserveAspectRatio="xMidYMid slice"
           aria-hidden="true"
         >
-          {/* fan origin roughly at center-right */}
           {[
             ["M760 260 1200 520", "#60a5fa", "3",   "0.85"],
             ["M760 260 1200 490", "#3b82f6", "2",   "0.75"],
@@ -79,7 +92,6 @@ export default function HeroSection() {
             ["M760 260 1200 280", "#1d4ed8", "1.5", "0.55"],
             ["M760 260 1180 240", "#60a5fa", "1",   "0.45"],
             ["M760 260 1160 210", "#93c5fd", "1",   "0.40"],
-            /* upward fans */
             ["M760 260 1140 0",   "#3b82f6", "1.5", "0.45"],
             ["M760 260 1100 0",   "#60a5fa", "1",   "0.38"],
             ["M760 260 1060 0",   "#1d4ed8", "1",   "0.32"],
@@ -87,7 +99,6 @@ export default function HeroSection() {
           ].map(([d, stroke, sw, op], i) => (
             <path key={i} d={d as string} stroke={stroke as string} strokeWidth={sw as string} opacity={op as string} strokeLinecap="round" />
           ))}
-          {/* soft glow bloom at fan origin */}
           <circle cx="760" cy="260" r="30" fill="#3b82f6" opacity="0.18" />
           <circle cx="760" cy="260" r="12" fill="#60a5fa" opacity="0.40" />
         </svg>
@@ -95,55 +106,63 @@ export default function HeroSection() {
 
       {/* ─── MAIN CONTENT ────────────────────────────────────────────── */}
       <div className="mx-auto max-w-[1500px] px-4 pt-8 pb-5 sm:px-6 lg:px-8">
-        <div className="grid items-center lg:grid-cols-[1fr_1fr] gap-4 lg:gap-6">
+        <div className="grid items-center lg:grid-cols-[1fr_1fr] gap-6 lg:gap-8">
 
           {/* ═══ LEFT COLUMN ═══════════════════════════════════════════ */}
           <div className="flex flex-col gap-3 text-center lg:text-left">
 
             {/* Eyebrow badge */}
             <div className="flex justify-center lg:justify-start">
-              <span className="inline-block bg-[#1a55d4] px-4 py-[6px] text-[11px] sm:text-[13px] font-extrabold tracking-widest text-white uppercase rounded-sm shadow">
-               A Reseller Of Websurfer Nepal Communication
+              <span className="inline-flex items-center gap-1.5 bg-[#1a55d4] px-4 py-[6px] text-[11px] sm:text-[13px] font-extrabold tracking-widest text-white uppercase rounded-sm shadow">
+                <Sparkles className="w-3.5 h-3.5 text-[#facc15]" />
+                Abhay Digital &amp; IT Solution • Birgunj-4, Parsa
               </span>
             </div>
 
-            {/* FAST • STABLE • RELIABLE */}
-            <h2 className="text-[22px] sm:text-[30px] md:text-[36px] font-extrabold tracking-[0.05em] text-white uppercase leading-none">
-              Fast{" "}
+            {/* SMART • SECURE • PROFESSIONAL */}
+            <h2 className="text-[20px] sm:text-[28px] md:text-[34px] font-extrabold tracking-[0.05em] text-white uppercase leading-none">
+              Smart{" "}
               <span className="mx-1 text-[0.75em] align-middle">•</span>
-              {" "}Stable{" "}
+              {" "}Secure{" "}
               <span className="mx-1 text-[0.75em] align-middle">•</span>
-              {" "}Reliable
+              {" "}Professional
             </h2>
 
-            {/* INTERNET - keyword-rich H1 for SEO, visually styled */}
+            {/* CCTV & IT Solutions - keyword-rich H1 for SEO, visually styled */}
             <h1
               className="leading-[0.88] font-black uppercase tracking-[-0.02em] text-transparent"
               style={{
-                fontSize: "clamp(44px, 9vw, 88px)",
+                fontSize: "clamp(40px, 8vw, 82px)",
                 background: "linear-gradient(180deg, #ffd04b 0%, #f97316 45%, #d9400a 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.5))",
               }}
             >
-              Fiber Internet
+              CCTV &amp; IT Solutions
             </h1>
-            <p className="sr-only">High-Speed Fiber Internet & IPTV in Birgunj, Parsa, Nepal</p>
+            <p className="sr-only">
+              Complete CCTV Camera Installation, Professional TV Wall Mounting, Electrical Wiring & Skycom IPTV Services in Birgunj-4, Parsa, Nepal.
+            </p>
 
             {/* For Home & Office pill */}
             <div className="flex justify-center lg:justify-start">
-              <span className="bg-[#1a55d4] px-8 py-[8px] text-[14px] sm:text-[16px] font-bold text-white rounded-sm shadow">
-                For Home &amp; Office
+              <span className="bg-[#1a55d4] px-6 py-[7px] text-[13px] sm:text-[15px] font-bold text-white rounded-sm shadow">
+                For Home, Office &amp; Commercial Buildings
               </span>
             </div>
 
+            {/* Short Tagline */}
+            <p className="text-slate-200 text-xs sm:text-sm font-medium max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              From HD security camera installation to flush TV wall mounting, building electrical wiring, and Skycom IPTV — get reliable, certified technicians at affordable rates.
+            </p>
+
             {/* 4 Feature icons */}
-            <div className="grid grid-cols-4 gap-2 mt-1 mx-auto lg:mx-0 w-full max-w-[460px]">
+            <div className="grid grid-cols-4 gap-2 mt-1 mx-auto lg:mx-0 w-full max-w-[480px]">
               {FEATURES.map(({ Icon, label1, label2 }) => (
-                <div key={label2} className="flex flex-col items-center gap-1 text-center">
-                  <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" strokeWidth={1.5} />
-                  <span className="text-[10px] sm:text-[11px] font-semibold leading-[1.3] text-white">
+                <div key={label2} className="flex flex-col items-center gap-1 text-center bg-white/5 border border-white/10 rounded-lg py-2 px-1">
+                  <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#ffaa00]" strokeWidth={1.8} />
+                  <span className="text-[10px] sm:text-[11px] font-semibold leading-[1.25] text-white">
                     {label1}<br />{label2}
                   </span>
                 </div>
@@ -151,14 +170,14 @@ export default function HeroSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 mt-2 mx-auto lg:mx-0 w-full max-w-[460px]">
+            <div className="flex flex-col sm:flex-row gap-3 mt-2 mx-auto lg:mx-0 w-full max-w-[480px]">
               <button
-                onClick={() => openInquiry("New Connection Inquiry")}
+                onClick={() => openInquiry("General Service Inquiry")}
                 className="flex flex-1 items-center justify-center gap-2 rounded-md px-5 py-3.5 text-[13px] sm:text-[15px] font-extrabold uppercase tracking-wide text-white shadow-lg transition hover:brightness-110 cursor-pointer"
                 style={{ background: "linear-gradient(180deg, #f78d1e 0%, #e05b0a 100%)" }}
               >
-                <UserPlus className="w-5 h-5" strokeWidth={2.2} />
-                New Connection
+                <Wrench className="w-5 h-5" strokeWidth={2.2} />
+                Book a Service
               </button>
               <a
                 href="https://wa.me/9779804268190"
@@ -176,74 +195,73 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* ═══ RIGHT COLUMN: artwork ═════════════════════════════════ */}
-          <div className="relative flex items-center justify-center">
-            {/* 100% Fiber Network badge */}
-            <div className="absolute top-2 right-2 z-20 flex h-[84px] w-[84px] sm:h-[104px] sm:w-[104px] flex-col items-center justify-center rounded-full border-[3px] border-[#22d3ee] bg-[#031331]/70 text-center shadow-[0_0_30px_rgba(34,211,238,0.7),inset_0_0_16px_rgba(34,211,238,0.25)] backdrop-blur-sm">
-              <span className="text-[22px] sm:text-[28px] leading-none font-black text-white">100%</span>
-              <span className="mt-0.5 text-[7px] sm:text-[8.5px] leading-none font-extrabold tracking-[0.12em] text-slate-200 uppercase">Fiber Network</span>
+          {/* ═══ RIGHT COLUMN: Artwork & Service Cards Showcase ═══════════ */}
+          <div className="relative flex flex-col items-center justify-center">
+            {/* 100% Quality badge */}
+            <div className="absolute -top-3 right-2 sm:right-6 z-20 flex h-[80px] w-[80px] sm:h-[96px] sm:w-[96px] flex-col items-center justify-center rounded-full border-[3px] border-[#22d3ee] bg-[#031331]/80 text-center shadow-[0_0_30px_rgba(34,211,238,0.7),inset_0_0_16px_rgba(34,211,238,0.25)] backdrop-blur-sm">
+              <span className="text-[20px] sm:text-[24px] leading-none font-black text-white">100%</span>
+              <span className="mt-0.5 text-[7px] sm:text-[8px] leading-none font-extrabold tracking-[0.1em] text-slate-200 uppercase">Quality Service</span>
             </div>
 
-            {/* Hero artwork */}
-            <div className="relative w-full aspect-[4/3] max-w-[600px] drop-shadow-[0_20px_50px_rgba(0,100,255,0.3)]">
+            {/* Featured Visual Card */}
+            <div className="relative w-full aspect-[4/3] max-w-[580px] rounded-2xl overflow-hidden border-2 border-blue-500/30 shadow-[0_20px_50px_rgba(0,100,255,0.25)] group">
               <Image
-                src="/images/hero-artwork.webp"
-                alt="Websurfer Fiber Network router and house - High-Speed Fiber Internet in Birgunj, Parsa, Nepal"
+                src="/images/cctv-solutions.jpg"
+                alt="Complete CCTV Solutions & Professional Installation in Birgunj"
                 fill
                 priority
                 fetchPriority="high"
-                sizes="(max-width: 1024px) 90vw, 600px"
-                className="object-cover rounded-lg"
+                sizes="(max-width: 1024px) 90vw, 580px"
+                className="object-cover transition duration-500 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#031331] via-[#031331]/40 to-transparent" />
+
+              {/* Service Badges on top of image */}
+              <div className="absolute bottom-4 left-4 right-4 z-10 flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1.5 bg-[#03183d]/90 backdrop-blur-md border border-cyan-400/40 text-cyan-300 px-3 py-1.5 rounded-lg text-xs font-bold shadow">
+                  <Camera className="w-3.5 h-3.5 text-[#ffaa00]" />
+                  HD CCTV Solutions
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-[#03183d]/90 backdrop-blur-md border border-blue-400/40 text-blue-200 px-3 py-1.5 rounded-lg text-xs font-bold shadow">
+                  <Tv className="w-3.5 h-3.5 text-[#ffaa00]" />
+                  TV Wall Fitting
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-[#03183d]/90 backdrop-blur-md border border-amber-400/40 text-amber-200 px-3 py-1.5 rounded-lg text-xs font-bold shadow">
+                  <Zap className="w-3.5 h-3.5 text-[#ffaa00]" />
+                  Electrical Wiring
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-[#03183d]/90 backdrop-blur-md border border-emerald-400/40 text-emerald-200 px-3 py-1.5 rounded-lg text-xs font-bold shadow">
+                  <MonitorPlay className="w-3.5 h-3.5 text-[#ffaa00]" />
+                  Skycom IPTV
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* ─── BOTTOM OFFER STRIP ─────────────────────────────────────── */}
-        <div className="mt-5 rounded-xl bg-white text-slate-800 shadow-[0_12px_40px_rgba(0,0,0,0.45)] overflow-hidden">
-          <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1fr_1fr_1fr_1.4fr] divide-x divide-slate-200 items-center">
-
-            {/* LIMITED TIME OFFER */}
-            <div className="col-span-2 md:col-span-1 flex items-center justify-center px-4 py-4">
-              <div className="relative inline-flex flex-col items-center -rotate-[3deg]">
-                <StarBurst className="absolute -top-4 -right-5 w-20 h-20 -z-10" />
-                <div className="bg-[#e0201b] text-white text-[10px] font-black uppercase tracking-[0.12em] px-3 py-[3px] rounded-[3px] shadow">
-                  Limited Time
+        {/* ─── BOTTOM SERVICE PILLARS STRIP ───────────────────────────── */}
+        <div className="mt-6 rounded-xl bg-white text-slate-800 shadow-[0_12px_40px_rgba(0,0,0,0.45)] overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 items-stretch">
+            {SERVICE_HIGHLIGHTS.map(({ Icon, title, tagline, href }) => (
+              <Link
+                key={title}
+                href={href}
+                className="flex items-center gap-3.5 p-4 hover:bg-blue-50/60 transition group cursor-pointer"
+              >
+                <div className="w-12 h-12 rounded-xl bg-[#0047ba] text-white flex items-center justify-center shrink-0 group-hover:bg-[#ff5500] transition-colors shadow-sm">
+                  <Icon className="w-6 h-6" strokeWidth={1.8} />
                 </div>
-                <div className="mt-[3px] bg-[#0c3b92] border-2 border-white text-white text-[26px] sm:text-[30px] font-black uppercase px-5 py-1 rounded-[6px] shadow-md leading-none">
-                  Offer!
+                <div className="flex-1 min-w-0">
+                  <div className="text-sm font-extrabold uppercase text-[#03183d] group-hover:text-[#0047ba] transition-colors flex items-center gap-1">
+                    {title}
+                    <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#ff5500]" />
+                  </div>
+                  <div className="text-xs font-semibold text-slate-500 truncate mt-0.5">
+                    {tagline}
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Free perks */}
-            {PERKS.map(({ Icon, label1, label2 }) => (
-              <div key={label2} className="flex flex-col items-center justify-center gap-1.5 px-2 py-4 text-center text-[#0c3b92]">
-                <Icon className="w-9 h-9" strokeWidth={1.6} />
-                <span className="text-[10px] sm:text-[12px] font-extrabold uppercase leading-[1.3] tracking-wide">
-                  {label1}<br />{label2}
-                </span>
-              </div>
+              </Link>
             ))}
-
-            {/* Price callout */}
-            <div className="col-span-2 md:col-span-1 flex items-center justify-center gap-3 px-3 py-4">
-              <div className="text-center">
-                <div className="text-[11px] sm:text-[13px] font-extrabold uppercase tracking-wide text-[#0c3b92] leading-tight">
-                  High Speed Internet
-                </div>
-                <div className="text-[10px] sm:text-[12px] font-extrabold uppercase tracking-wide text-[#0c3b92] leading-tight">
-                  Starting From
-                </div>
-                <div className="text-[26px] sm:text-[32px] font-black text-[#e0201b] leading-none my-0.5">
-                  Rs. 850/-
-                </div>
-                <div className="text-[10px] sm:text-[12px] font-extrabold uppercase tracking-wide text-[#0c3b92] leading-tight">
-                  Per Month
-                </div>
-              </div>
-              <Gauge className="w-10 h-10 sm:w-12 sm:h-12 text-[#0c3b92] shrink-0" strokeWidth={1.6} />
-            </div>
           </div>
         </div>
       </div>
